@@ -1,17 +1,36 @@
 <h2>Eat Dem Burgers!!!!</h2>
 
-<ul>
-  {{#each burger}}
-  {{#unless devoured}}
-  <li>
-    {{burger_name}}
-    <button class="eatBurger" data-id="{{id}}" data-devoured="{{devoured}}">
-      EAT ME!
-    </button>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        <li>
+          {{burger_name}}
+          <button class="eatBurger" data-id="{{id}}" data-devoured="{{devoured}}">
+            EAT ME!
+          </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <li>
+          {{burger_name}}
+          <p>I have been eaten!</p>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 <h2>Add a Burger</h2>
 <form class="create-form">
@@ -23,4 +42,3 @@
 
   <button type="submit">Make Burger</button>
 </form>
-
